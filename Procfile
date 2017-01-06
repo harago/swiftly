@@ -1,1 +1,1 @@
-web: swiftly:app 
+web: gunicorn swiftly:app
