@@ -1,0 +1,17 @@
+body {
+    font-family: 'Lustria', serif;
+}
+
+h1 {
+    font-family: 'Arima Madurai', cursive;
+}
+
+small {
+    font-size: large;
+}
+
+div.snippet {
+    display: block;
+    line-height: 2;
+
+}
