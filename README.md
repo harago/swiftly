@@ -1,5 +1,5 @@
 Swiftly is a very simple news-based WebApp built with python and flask. 
-It pulls rss feeds from 4 news sources (bbc, cnn, fox, iol) as and when they are updated and displays in 
+It pulls rss feeds from few major sources as and when they are updated and displays news in 
 a 3-column bootstrap grid. Following are the tools and libraries used
 
 1. basic python concepts
