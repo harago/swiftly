@@ -39,7 +39,6 @@
                           <li><a href="?publication=spiegel">spiegel de</a></li>
                           <li><a href="?publication=france24">france24 fr</a></li>
                           <li><a href="?publication=elpais">elpais es</a></li>
-                          <li><a href="?publication=bbca">bbc arabic</a></li>
                           <li><a href="?publication=ndtv">ndtv in</a></li>
                         </ul>
                     </div>
@@ -53,19 +52,13 @@
             {% for article in articles %}
                 <div class="col-lg-4 col-md-6s">
 
-                {% if publication == 'bbc' or publication=='bbca' %}
+                {% if publication == 'bbc'%}
 
                     <h3 style="line-height: 1.3">{{ article.title.capitalize() }} </h3>
                     <p> {{ article.summary }} </p>
                     <em><h5 style="line-height: 2"> {{ article.published }} </h5><br/></em>
-                        {% if articles.media_thumbnail %}
-                            <img src="{{ article.media_thumbnail[0]['url'] }}" alt="bbc-feed-image" class="img-responsive img-rounded"><br>
-                        {% endif %}
-                        {% if publication =='bbca' %}
-                            <a href="{{ article.link }}" target="_blank"><i style="font-size: small">source: BBC Arabic News</i></a>
-                        {% elif publication == 'bbc' %}
-                            <a href="{{ article.link }}" target="_blank"><i style="font-size: small">source: {{ publication.upper() }} News</i></a>
-                        {% endif %}
+                    <img src="{{ article.media_thumbnail[0]['url'] }}" alt="bbc-feed-image" class="img-responsive img-rounded"><br>
+                    <a href="{{ article.link }}" target="_blank"><i style="font-size: small">source: {{ publication.upper() }} News</i></a>
 
                 {% elif publication == 'nytimes' %}
 
