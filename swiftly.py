@@ -48,4 +48,4 @@ def get_value_with_fallback(key):
 
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=False)
+    app.run(port=5000, debug=True)
