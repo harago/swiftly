@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="width: 90%; height: auto; padding: 20px; margin: auto;">
+<html lang="en" style="width: 90%; height: auto; padding: 20px; margin: auto;" xmlns:margin-left="http://www.w3.org/1999/xhtml">
     <head>
         <!-- basic page needs -->
           <meta charset="utf-8">
@@ -23,30 +23,33 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-12">
-                    <h1 style="color: crimson; font-size: 50px; font-family: 'Arima Madurai', cursive;"><b>Swiftly *</b></h1>
+                    <h1 style="color: crimson; font-size: 50px; font-family: 'Arima Madurai', cursive; margin-top: 10px"><b>Swiftly *</b></h1>
                         <small style="color: #1a1a1a; font-size: large">world news - pressed hourly</small>
                 </div>
                     <!-- NEWS SEARCH -->
-                    <div class="dropdown" style="margin-top: 50px">
-                        <button class="btn btn-default dropdown-toggle pull-right" type="button" data-toggle="dropdown" style="margin-right: 15px">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle pull-right" type="button" data-toggle="dropdown" style="margin-right: 15px;
+                        margin-top: -25px">
                          more news<span style="margin-left: 5px" class="caret"></span></button>
-                        <ul class="dropdown-menu pull-right" style="margin-top: 92px; margin-right: 10px">
+                        <ul class="dropdown-menu pull-right" style="margin-top: 110px; margin-right: 10px">
                           <li><a href="?publication=bbc">bbc uk</a></li>
                           <li><a href="?publication=nytimes">nytimes us</a></li>
                           <li><a href="?publication=spiegel">spiegel de</a></li>
                           <li><a href="?publication=france24">france24 fr</a></li>
                           <li><a href="?publication=elpais">elpais es</a></li>
+                          <li><a href="?publication=russia">russia today</a></li>
                           <li><a href="?publication=ndtv">ndtv in</a></li>
                         </ul>
                     </div>
                 </div>
+                <br>
             <hr style="border-color: darkgray"><br><br>
         </div>
 
         <!-- ARTICLES -->
         <div class="container">
                 {% for article in articles %}
-                    <div class="col-sm-6 col-md-4" style="min-height: 550px">
+                    <div class="col-sm-6 col-md-4" style="min-height: 600px">
                         {% if publication == 'bbc'%}
 
                             <h3 style="line-height: 1.3">{{ article.title.capitalize() }} </h3>
@@ -89,9 +92,19 @@
                             <p> {{ article.summary }} </p>
                             <em><h5 style="line-height: 2"> {{ article.published }} </h5><br/></em>
                              {% if article.links[2] %}
-                                <img src="{{ article.links[2].href }}" alt="spiegel-feed-image" class="img-responsive img-rounded""><br>
+                                <img src="{{ article.links[2].href }}" alt="elpais-feed-image" class="img-responsive img-rounded"><br>
                             {% endif %}
                             <a href="{{ article.link }}" target="_blank"><i style="font-size: small">source: {{ publication.capitalize()}}</i></a>
+
+                        {% elif publication=='russia' %}
+
+                        <h3 style="line-height: 1.3">{{ article.title }} </h3>
+                        <p> {{ article.summary }} </p>
+                        <em><h5 style="line-height: 2"> {{ article.published }} </h5><br/></em>
+                        {% if article.links[1].type=='image/mixed' %}
+                            <img src="{{ article.links[1].href }}" alt="russia-today-feed-image" class="img-responsive img-rounded"><br>
+                        {% endif %}
+                        <a href="{{ article.link }}" target="_blank"><i style="font-size: small">source: {{ publication.capitalize()}} Today</i></a>
 
                         {% else %}
 
@@ -118,7 +131,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-12">
                         <hr style="border-color: darkgray"/>
-                        <footer style="text-align: center">2017 &#169; ideaScience | musingbox@gmail.com</footer>
+                        <footer style="text-align: center">2017 &#169; ideaScience | hara@swiftly.news</footer>
                     </div>
                 </div>
             </div>

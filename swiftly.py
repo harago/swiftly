@@ -11,6 +11,7 @@ RSS_FEEDS = {'bbc': 'http://feeds.bbci.co.uk/news/rss.xml',
              'ndtv': 'http://feeds.feedburner.com/ndtvnews-trending-news',
              'elpais': 'http://ep00.epimg.net/rss/elpais/portada.xml',
              'bbca': 'http://feeds.bbci.co.uk/arabic/rss.xml',
+             'russia':  'https://russian.rt.com/inotv/s/rss/inotv_main.rss',
              }
 
 DEFAULTS = {'publication': 'bbc'}
